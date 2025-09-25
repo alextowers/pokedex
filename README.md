@@ -1,59 +1,75 @@
-# Pokedex
+# Pokedex App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.17.
+This is a Pokedex application built with Angular, designed to provide information about Pokémon through natural language queries.
 
-## Development server
+## Our Collaboration
 
-To start a local development server, run:
+This application was built through an interactive session with a Gemini CLI agent. The agent guided the development process, from setting up the initial Angular project to implementing features and styling. Our collaboration involved:
 
-```bash
-ng serve
-```
+*   **Initial Setup:** Setting up the Angular project and configuring the development environment.
+*   **Standalone Conversion:** Migrating the application to a standalone Angular architecture.
+*   **Core Functionality:** Implementing the search mechanism to fetch and display Pokémon data from the PokéAPI.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+*   **Enhanced Query Processing:** Developing a `QueryParserService` to understand natural language queries, extract Pokémon names, and identify requested information (types, abilities, stats) with synonym handling.
+*   **Improved Error Handling:** Implementing specific and user-friendly error messages.
+*   **Pokedex-themed UI:** Styling the application to resemble a classic Pokedex device.
+*   **"My Team" Feature:** Adding functionality to create a team of up to three Pokémon, store it in local storage, and display Pokémon images in the team list.
 
-## Code scaffolding
+## Features
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+*   Natural language query processing (e.g., "tell me the type of psyduck", "abilities of pikachu").
+*   Displays Pokémon name, image, types, abilities, and stats.
+*   Conditional display of information based on query.
+*   "My Team" feature to add/remove up to three Pokémon, persisted in local storage.
+*   Pokedex-themed user interface.
 
-```bash
-ng generate component component-name
-```
+## Local Installation and Running
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Prerequisites
 
-```bash
-ng generate --help
-```
+*   Node.js (LTS version recommended)
+*   npm (Node Package Manager)
 
-## Building
+### Steps
 
-To build the project run:
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/alextowers/pokedex.git
+    cd pokedex
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+3.  **Run the application:**
+    ```bash
+    ng serve -o
+    ```
+    This will open the application in your default web browser at `http://localhost:4200`.
 
-```bash
-ng build
-```
+## Docker Installation and Running
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Prerequisites
 
-## Running unit tests
+*   Docker
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Steps
 
-```bash
-ng test
-```
+1.  **Build the Docker image:**
+    ```bash
+    docker build -t pokedex-app .
+    ```
+2.  **Run the Docker container:**
+    ```bash
+    docker run -p 4200:4200 --name pokedex-dev-container -d pokedex-app
+    ```
+3.  **Access the application:**
+    Open your web browser and navigate to `http://localhost:4200`.
 
-## Running end-to-end tests
+## API Credits
 
-For end-to-end (e2e) testing, run:
+Pokémon data is provided by the [PokéAPI](https://pokeapi.co/).
 
-```bash
-ng e2e
-```
+## License
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
