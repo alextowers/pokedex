@@ -66,6 +66,16 @@ This application was built through an interactive session with a Gemini CLI agen
 3.  **Access the application:**
     Open your web browser and navigate to `http://localhost:4200`.
 
+## Running Tests
+
+To run the unit tests, use the following command:
+
+```bash
+npm test
+```
+
+This will run the tests using Karma and display the results in the console.
+
 ## API Credits
 
 Pokémon data is provided by the [PokéAPI](https://pokeapi.co/).

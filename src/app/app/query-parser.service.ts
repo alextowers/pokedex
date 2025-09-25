@@ -41,7 +41,7 @@ export class QueryParserService {
     // Try to extract pokemon name from the cleaned query
     // This simple approach assumes the remaining word(s) are the pokemon name
     // A more advanced approach would involve a list of all pokemon names
-    pokemonName = cleanedQuery.split(' ').pop();
+    pokemonName = cleanedQuery.split(' ').filter(Boolean).pop();
 
     return { pokemonName, requestedInfo };
   }
