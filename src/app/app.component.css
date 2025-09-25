@@ -1,0 +1,209 @@
+/* Pokedex Frame */
+.pokedex-frame {
+  background-color: #dc0a2d; /* Pokedex red */
+  border: 10px solid #222;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: 'Press Start 2P', cursive; /* Pixelated font, will need to be imported */
+  color: #eee;
+}
+
+/* Container for content inside the Pokedex frame */
+.container {
+  background-color: #333; /* Dark background for the screen */
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+h1 {
+  color: #ffcb05; /* Yellow for title */
+  text-shadow: 2px 2px #222;
+  margin-bottom: 20px;
+}
+
+/* Search Section */
+.search-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-container input[type="text"] {
+  background-color: #eee;
+  border: 2px solid #222;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  color: #333;
+  flex-grow: 1;
+  max-width: 400px;
+}
+
+.search-container button {
+  background-color: #ffcb05; /* Yellow button */
+  color: #222;
+  border: 2px solid #222;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+  background-color: #e0b000;
+}
+
+/* Loading and Error Messages */
+.loading-container, .error-container {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.loading-container {
+  background-color: #444;
+  color: #ffcb05;
+}
+
+.error-container {
+  background-color: #dc0a2d;
+  color: #eee;
+  border: 1px solid #eee;
+}
+
+/* Pokemon Display */
+.pokemon-container {
+  margin-top: 20px;
+  background-color: #eee; /* Light background for pokemon data */
+  border: 5px solid #222;
+  border-radius: 10px;
+  padding: 20px;
+  color: #333;
+  text-align: left;
+}
+
+.pokemon-container h2 {
+  color: #dc0a2d; /* Red for pokemon name */
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.pokemon-container img {
+  display: block;
+  margin: 0 auto 15px auto;
+  background-color: #fff;
+  border: 2px solid #222;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.pokemon-container h3 {
+  color: #222;
+  margin-top: 15px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.pokemon-container p, .pokemon-container ul {
+  margin-top: 5px;
+  padding-left: 20px;
+}
+
+.pokemon-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pokemon-container ul li {
+  background-color: #ddd;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border-left: 5px solid #ffcb05;
+}
+
+/* Add to Team Button */
+.add-to-team-button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-team-button:hover {
+  background-color: #45a049;
+}
+
+/* My Team Container */
+.my-team-container {
+  margin-top: 30px;
+  background-color: #333;
+  border: 5px solid #222;
+  border-radius: 10px;
+  padding: 20px;
+  color: #eee;
+  text-align: left;
+}
+
+.my-team-container h2 {
+  color: #ffcb05;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.team-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.team-list li {
+  background-color: #444;
+  margin-bottom: 8px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 5px solid #dc0a2d; /* Red accent */
+}
+
+.team-pokemon-image {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 5px;
+  border: 2px solid #222;
+}
+
+.remove-from-team-button {
+  background-color: #f44336; /* Red */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Circular button */
+  width: 25px;
+  height: 25px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.remove-from-team-button:hover {
+  background-color: #da190b;
+}

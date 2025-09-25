@@ -1,0 +1,60 @@
+<div class="pokedex-frame">
+  <div class="container">
+    <h1>Pokedex</h1>
+    <div class="search-container">
+      <input type="text" [(ngModel)]="query" placeholder="e.g. tell me the type of psyduck" (keyup.enter)="search()">
+      <button (click)="search()">Search</button>
+    </div>
+
+    <div *ngIf="loading" class="loading-container">
+      <p>Loading...</p>
+    </div>
+
+    <div *ngIf="error" class="error-container">
+      <p>{{ errorMessage }}</p>
+    </div>
+
+    <div *ngIf="pokemon" class="pokemon-container">
+      <h2 *ngIf="requestedInfo.includes('all') || requestedInfo.includes('type') || requestedInfo.includes('abilities') || requestedInfo.includes('stats')">{{ pokemon.name }}</h2>
+      <img *ngIf="requestedInfo.includes('all')" [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}">
+
+      <div *ngIf="requestedInfo.includes('all') || requestedInfo.includes('type')">
+        <h3>Types:</h3>
+        <p><span *ngFor="let type of pokemon.types">{{ type.type.name }} </span></p>
+      </div>
+
+      <div *ngIf="requestedInfo.includes('all') || requestedInfo.includes('abilities')">
+        <h3>Abilities:</h3>
+        <ul>
+          <li *ngFor="let ability of pokemon.abilities">{{ ability.ability.name }}</li>
+        </ul>
+      </div>
+
+      <div *ngIf="requestedInfo.includes('all') || requestedInfo.includes('stats')">
+        <h3>Stats:</h3>
+        <ul>
+          <li *ngFor="let stat of pokemon.stats">{{ stat.stat.name }}: {{ stat.base_stat }}</li>
+        </ul>
+      </div>
+
+      <button
+        *ngIf="pokemon && !isTeamFull() && !isPokemonInTeam(pokemon.name)"
+        (click)="addPokemonToTeam(pokemon)"
+        class="add-to-team-button"
+      >
+        Add to Team
+      </button>
+    </div>
+
+    <div class="my-team-container">
+      <h2>My Team ({{ myTeam.length }}/3)</h2>
+      <ul class="team-list">
+        <li *ngFor="let member of myTeam">
+          <img [src]="member.imageUrl" alt="{{ member.name }}" class="team-pokemon-image">
+          <span>{{ member.name }}</span>
+          <button (click)="removePokemonFromTeam(member.name)" class="remove-from-team-button">X</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
