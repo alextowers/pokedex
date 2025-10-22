@@ -1,0 +1,17 @@
+{
+  "name": "Pokedex Angular App",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "angular.ng-template"
+      ]
+    }
+  },
+  "forwardPorts": [4200],
+  "postStartCommand": "ng serve --host 0.0.0.0",
+  "postCreateCommand": "npm install",
+  "remoteUser": "node"
+}
